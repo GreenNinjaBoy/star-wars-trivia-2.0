@@ -1,0 +1,336 @@
+/*link to google fonts */
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Dela+Gothic+One&family=League+Gothic&display=swap');
+/* link to CDN fonts which had the star wars themed font*/
+@import url('https://db.onlinewebfonts.com/c/0c724f6aa457310440cf8949c615cbd7?family=Star+Jedi+V2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'star jedi v2', sans-serif;
+    text-align: center;
+    background-image: url("../images/star-wars-space-background.webp");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    overflow: auto;
+    padding: 5px;
+}
+
+/* Styles for heading texts */
+h1 {
+    color: #FFE81F;
+    font-size: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    color: aliceblue;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 150%;
+    font-family: 'Leauge Gothic', sans-serif;
+}
+
+h3 {
+    font-size: 1.3em;
+    text-shadow: 0px 5px 20px #abdfff;
+}
+
+#question-area {
+    color: aliceblue;
+    text-shadow: 0px 5px 20px #FFE81F;
+}
+
+/* Style for quiz timer */
+
+#timer {
+    text-shadow: 0px 5px 20px #FFE81F;
+    margin-left: 20px;
+}
+
+/* Style for paragraph texts */
+
+p {
+    text-shadow: 0px 5px 20px #FFE81F;
+    font-family: 'Leauge Gothic', sans-serif;
+    font-size: 1.4rem;
+    padding-top: 15px;
+    color: white;
+}
+
+ul {
+    margin: 0;
+}
+
+/* Style for game container card */
+.game-container {
+    position: relative;
+    max-width: 650px;
+    margin: 25px 5px;
+    opacity: 1;
+    background-color: #010101;
+    border: 1px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem #FFE81F,
+        0 0 0.8rem #FFE81F,
+        0 0 2.8rem #FFE81F,
+        inset 0 0 1.3rem #FFE81F;
+}
+
+.game-container h2 {
+    margin-top: 3rem;
+}
+
+/* Style for the answer buttons */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 5px 0;
+    font-size: 0.8rem;
+    justify-content: space-evenly;
+}
+
+.question-image {
+    display: block;
+    margin: 0 auto;
+    /* This centers the image horizontally */
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.btn {
+    color: #abdfff;
+    text-shadow: 0px 5px 20px #abdfff;
+    font-weight: 600;
+    background-color: #010101;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    min-width: 180px;
+    margin: 20px auto;
+    font-size: 1.5rem;
+    border-style: solid;
+    border: none;
+    border-radius: 20px;
+}
+
+.answer-btn {
+    margin: 10px auto;
+
+}
+
+/* To ensure the correct function is displayed when running */
+.hide {
+    display: none;
+}
+
+.menu-btn {
+    color: #abdfff;
+    text-shadow: 0px 5px 20px #abdfff;
+    font-weight: 600;
+    background: #010101;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #010101 50%, white 50%);
+    transition: background-position 1s, box-shadow 1s;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    min-width: 180px;
+    margin: 20px auto;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 20px;
+}
+
+.menu-btn:hover {
+    box-shadow: 0px 0px 15px 10px #6fbafc;
+    color: #0e202b;
+    background-position: -100% 0;
+}
+
+/* Style for the close button within the rules section */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0 10px;
+    background: #010101;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #010101 50%, white 50%);
+    transition: background-position 1s;
+    font-size: 2rem;
+    color: #abdfff;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.close-btn:hover {
+    box-shadow: 0px 0px 15px 10px #f50e0b;
+    color: #010101;
+    background-position: -100% 0;
+}
+
+.medium:hover {
+    box-shadow: 0px 0px 15px 10px #76ffae;
+}
+
+.hard:hover {
+    box-shadow: 0px 0px 15px 10px #e078fe;
+}
+
+/* Style for the rules page */
+#rules {
+    height: fit-content;
+    text-align: center;
+    font-size: 150%;
+    margin: 0 20px;
+    padding: 10px;
+    color: #abdfff;
+    height: fit-content;
+    font-family: 'Leauge Gothic', sans-serif;
+}
+
+li {
+    list-style-type: none;
+    text-align: left;
+    margin: 20px 20px;
+    padding: 10px;
+}
+
+/* Adding style to show the user the correct and wrong answers */
+.correct-answer {
+    text-shadow: 0px 5px 20px #76ffae;
+    color: #76ffae;
+}
+
+.wrong-answer {
+    text-shadow: 0px 5px 20px #f50e0b;
+    color: #f50e0b;
+}
+
+.no-pointer {
+    pointer-events: none;
+}
+
+footer {
+    margin-top: auto;
+    color: white;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.img-hide {
+    display: none;
+}
+
+.popup-img {
+    object-fit: cover;
+}
+
+#pop-up h2 {
+    font-size: 2rem;
+}
+
+@keyframes pulsate {
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #FFE81F,
+            0 0 80px #FFE81F,
+            0 0 90px #FFE81F,
+            0 0 100px #FFE81F,
+            0 0 150px #FFE81F;
+    }
+
+    0% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 10px #FFE81F,
+            0 0 45px #FFE81F,
+            0 0 55px #FFE81F,
+            0 0 70px #FFE81F,
+            0 0 80px #FFE81F;
+    }
+}
+
+/* Media query for screens with a max width of 767px */
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 3rem;
+        margin-top: 40px;
+    }
+
+    #rules {
+        font-size: 1.3rem;
+    }
+
+    .game-container {
+        margin: 10px auto;
+
+    }
+
+    .difficulty-container {
+        padding: 0;
+        margin-top: 15.5rem;
+    }
+
+    .main-area {
+        flex-wrap: wrap;
+        padding: 0 30px;
+    }
+
+    #timer {
+        margin-left: 40px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        gap: 0;
+        margin-top: 0;
+    }
+
+    .img {
+        margin-top: 0;
+    }
+
+    .close-btn {
+        top: 14px;
+        right: 15px;
+    }
+
+    /* Style for the answer buttons in a single row */
+    .btn-grid {
+        grid-template-columns: repeat(1, auto);
+        /* Change to a single column */
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+}
