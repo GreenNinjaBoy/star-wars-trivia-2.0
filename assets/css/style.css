@@ -334,3 +334,36 @@ footer {
     }
 
 }
+
+/* Fix for the popup display on mobile devices */
+#pop-up {
+    max-width: 90vw;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adding responsive adjustments for smaller screens */
+@media screen and (max-width: 480px) {
+    .game-container {
+        width: 90%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    #trivia-area {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        margin: 5px;
+    }
+}

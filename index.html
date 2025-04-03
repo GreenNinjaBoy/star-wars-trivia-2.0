@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+      name="description"
+      content="A site for people to test their Star Wars knowledge by taking a quiz.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="trivia, quiz, starwars, lightsaber">
+    <title>StarWars Trivia</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--favicon link-->
+    <link rel="shortcut icon" type="image/lightsaber-icon" href="favicon.ico.png">
+  </head>
+  <body>
+    <!--Quiz Header-->
+    <header>
+      <h1 id="trivia-heading">Star Wars Trivia</h1>
+    </header>
+
+    <!--Main Menu for Quiz-->
+    <div id="trivia-menu" class="game-container">
+      <h2>Test Your Star-Wars Knowledge with this fun Online Quiz!</h2>
+      <button id="rules-btn" class="btn menu-btn">Quiz Rules</button>
+      <button id="trivia-btn" class="btn menu-btn">Begin Quiz</button>
+    </div>
+
+    <!--rules of the game-->
+
+    <div id="rules" class="game-container hide">
+      <h2 id="game-rules">Game Rules</h2>
+      <h3 class="rules">This Game is based on episodes I - IX</h3>
+      <ul>
+        <li>Each quiz is made is made up of 15 random questions</li>
+        <li>
+          The quiz has three different difficulties Padawan (easy), Jedi Knight
+          (medium), or Jedi Master (Hard).
+        </li>
+        <li>You will have 15 seconds to answer each question.</li>
+        <li>Failure to answer results in a automatic incorrect answer.</li>
+        <li>
+          To select an answer, simply click or tap (if on touch screen device)
+          on the one you think is correct.
+        </li>
+        <li>Try not to cheat as this is ment to be fun.</li>
+      </ul>
+      <button id="close-rules" class="close-btn">X</button>
+    </div>
+
+    <!-- user being prompt to select their difficulty setting-->
+    <div
+      id="difficulty-setting"
+      class="game-container hide difficulty-container"
+    >
+      <button id="close-difficulty" class="close-btn">X</button>
+      <h2>Choose Your path to begin</h2>
+      <div>
+        <button id="easy" class="btn difficulty-selection menu-btn">
+          PADAWAN
+        </button>
+        <button id="medium" class="btn difficulty-selection medium menu-btn">
+          JEDI KNIGHT
+        </button>
+        <button id="hard" class="btn difficulty-selection hard menu-btn">
+          JEDI MASTER
+        </button>
+      </div>
+    </div>
+
+    <!--the main quiz area-->
+
+    <div id="trivia-area" class="game-container hide main-area">
+      <button id="close-game" class="close-btn">X</button>
+      <!-- main question area with countdown timer-->
+
+      <div id="question-area">
+        <h2>
+          Question <span id="trivia-number">0</span>/15
+          <span id="timer">0</span>
+        </h2>
+        <p id="question">The Asked Question will go here!</p>
+      </div>
+      <!--the score display and the answer options container-->
+      <div id="main-answer-area" class="btn-grid"></div>
+      <button id="next-button" class="btn hide">Next Question</button>
+      <p>Score: <span id="user-score">0</span></p>
+    </div>
+
+    <!--Creating a popup display if user runs out of time-->
+    <div id="pop-up" class="game-container hide">
+      <img src="assets/images/yoda.webp" alt="yoda" class="popup-img">
+      <h2>Run out of time you have!</h2>
+    </div>
+    <!--div showing the user their final score and message for completed quiz-->
+
+    <div id="trivia-complete" class="game-container hide">
+      <h2>Trivia Complete!</h2>
+      <p>Total Score: <span id="final-score">0</span>/15</p>
+      <p><span id="movie-quote">movie quote goes here</span></p>
+      <button id="retry-button" class="btn trivia-complete-button">
+        Retry
+      </button>
+      <button id="main-menu-button" class="btn trivia-complete-button">
+        Main Menu
+      </button>
+    </div>
+
+    <!--footer section-->
+
+    <footer>
+      <p>This quiz was created by Jamie Connell</p>
+    </footer>
+    <!--link to javascript file-->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/padawan.js"></script>
+    <script src="assets/js/jediknight.js"></script>
+    <script src="assets/js/jedimaster.js"></script>
+  </body>
+</html>
